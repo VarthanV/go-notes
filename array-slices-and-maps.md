@@ -158,3 +158,51 @@ Many builtins are nil safe len,cap,range
     Make te zero value useful - Rob Pike
 ```
 
+- nil is zero value of multiple types in go
+
+| Type      | Value  |
+|-----------|--------|
+| bool      | false  |
+| numbers   | 0      |
+| string    | ""     |
+| pointers  | nil    |
+| slices    | nil    |
+| maps      | nil    |
+| channels  | nil    |
+| functions | nil    |
+| interfaces| nil |
+
+```go
+    type Person struct {
+        Age int
+        Name string
+        Friend []Person
+    }
+
+    var p Person // Person{0,"", nil}
+```
+- The type of nil unless the predeclared identifier is nil go has no type.
+
+## nil pointer ##
+- points to nil a.k.a nothing
+- zero value of pointers
+
+## slice ##
+
+- A slice has 3 properties pointer to empty array , len , cap
+
+| Kinds of nil | Definition  |
+|-----------|--------|
+| pointers | point to nothing|
+|slices| have no backing array|
+|maps| are not initialized|
+|channels| are not initialized|
+|functions| are not initialized|
+|interfaces| are not initialized|
+
+# nil is useful
+
+- pointers: methods can be called on nil receivers
+- slices: perfectly valid zero values
+- maps: perfect as ready-only values
+- channels: essential for some concurrency patterns

@@ -180,3 +180,177 @@ outer:
 
     }
 ```
+
+## Declaration
+
+- Constant declaration with const
+
+- Type declaration with type
+
+- Variable declaration with var (must have type or initial value sometimes both)
+
+- Shortly initialized variable declaration of type ``:=`` only inside a function
+
+- Function declaration with func (methods may be only declared at package level)
+
+- Formal parameters and named returns for a function
+
+
+## var keyword
+
+```go
+    var a int // 0 by default
+    var b int = 1
+    var c = 1 // int
+    var d  = 1.0 // float64
+
+    var (
+        x,y int
+        z float64
+        s string
+    )
+```
+## Short declaration
+
+The short declaration op has some rules
+
+- It cant be used outside of a fun ction
+
+- It must be used (instead of var in control statement) (if,etc)
+
+- It must declare atleast one new var
+
+```go
+    err := do()
+    err := bad() //WRONG
+    x , err := val(); // OK
+```
+
+- It wont reuse an d existing declaration from an outer scope
+
+## Shadowing short declarations
+
+- Short declarations with := have some gotchaes
+
+```go
+    func main(){
+        n, err := fmt.Println("hello")
+        
+        if _ err := fmt.Println(n); err != nil {
+            fmt.Println(err)
+        }
+    }
+```
+
+- **Compile error** : the first errr is unused
+
+This follows scoping rules because :=  is a declaration and second ``err`` is in the scope of the ``if`` statement
+
+
+```go
+    func bad ()error {
+        var err error
+        for {
+            n, err  := foo() // shadows err above
+        // .. it is scoped
+            if err != nil {
+                break
+            }
+            bar (buff)
+        }
+        return err // will always be nil
+    }
+```
+
+## Structural typing
+
+- It is the same type if it has same structure or behaviour
+
+```go
+    a := [...]int{1,2,3}
+    b := [3]int{}
+
+    a = b // ok
+
+    c := [4]int{}
+
+    a = c // NOT OK
+```
+
+It's the same type if it has same structure or behaviour
+
+- Arrays of same size and base type
+
+- Slices with same base type
+
+- Maps of same key and value types
+
+- Structs with same seq of fieldnames/types
+
+- Functions with same parameters and return types
+
+## Named typing
+
+It is only the same type if it has same declared type name
+
+```go
+    type x int
+
+    func main(){
+        var a x // xis defined type
+
+        b := 12 // b to int
+
+        a = b// TYPE mismatch
+
+        a = 12 // OK untyped literal
+
+        a = x(b) // OK , type conversion
+    }
+
+```
+
+- Go uses name typing for non-function user-declared types
+
+
+## Numeric literals
+
+- Go keeps arbitary precision for literal values (256 bits or more)
+
+- Integer literals are untyped
+    - Assign a literal to any size integer without conversion
+    - Assign an integer literal to float
+
+- Ditto float and complex
+
+- Mathematical constants can be very precise
+
+Pi = 3.1444949494949
+
+- Constant arithmetic done at compile time doesnt lose precision
+
+## Operators
+
+**Arithemtic**: numbers only except + on string
+
+```
+    + - * / % ++ --
+```
+
+**Comparision**: only numbers / strings support order
+
+```
+    == != < > <= >=
+```
+
+**Boolean**: Only bools with shortcut eval
+
+```
+    ! && || 
+```
+
+**Bitwise**: Operate on integers
+
+```
+    & | ^ << >> &^
+```

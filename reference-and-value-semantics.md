@@ -163,4 +163,19 @@ func (r OfferResolver) Changes() []ChangeResolver{
     return result
 }
 ```
+
 Wrong: all the returned resolver point to last change in list
+
+Fix:
+
+```go
+func (r OfferResolver) Changes() []ChangeResolver{
+    var result []ChangeResolver
+
+    for _ , change := r.d.Status.Changes {
+        c := change
+        result = append(result, ChangeResolver{&c})//wromg
+    }
+    return result
+}
+```

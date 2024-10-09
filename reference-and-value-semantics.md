@@ -179,3 +179,39 @@ func (r OfferResolver) Changes() []ChangeResolver{
     return result
 }
 ```
+
+## Inheritance
+
+Inheritance has conflicting meanings
+
+- substitution(subtype) polymorphism
+
+- structural sharing of impl details
+
+Subclass inherits from superclass/ baseclass
+
+## Why inheritance is bad? 
+
+- It injects a dependence on superclass into subclass
+
+- what if the superclass changes behavior?
+
+- what if the abstract concept is leaky?
+
+Not having inheritance means better encapsulation and isolation
+
+Inheritance will force you in term of communication with objects.
+
+## OO in Go
+
+- Go offers four main support for OO programming
+
+- Encapsulation using the package for visblity control
+
+- abstraction and polymorphism using interface types
+
+- Enhanced composition to provide structure sharing
+
+Go doesn't offer substitutability based on types
+
+Substitutability is based only on interfaces ,purely a function of abstract behavior

@@ -215,3 +215,12 @@ Inheritance will force you in term of communication with objects.
 Go doesn't offer substitutability based on types
 
 Substitutability is based only on interfaces ,purely a function of abstract behavior
+
+
+## Clasess in Go
+
+Not having classes in Go is huge releif
+
+- Go allows defining methods on any user defined type rather than only a class
+
+- Go allows any object to implement methods or an interface not only subclass

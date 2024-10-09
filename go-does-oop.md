@@ -53,3 +53,45 @@ Three main types
 Protocol oriented programming uses explicit interface types 
 
 Behavior is completely seperate from implementation good for abstraction
+
+Go resists this
+- No inheritance
+
+- No subtype
+
+It insted emphazises interfaces.
+
+Go interfaces are small
+
+```go
+type Stringer interface {
+    String()string
+}
+```
+- A ``Stringer`` can pretty print itself , Anything that implements ``String`` is a ``Stringer``
+
+## Wrapping interfaces
+
+```go
+type LogReader struct {
+    io.Reader
+}
+
+func (r LogReader) Read(b []byte) (int,error){
+    //
+}
+
+// Wrapping bytereader with LogReader
+
+r := LogReader{ByteReader('a')}
+b := make([]byte, 10)
+r.Read(b)
+```
+
+By wrapping we compose interface values
+
+## Further Reading
+
+- [Inheritance is evil](https://codeburst.io/inheritance-is-evil-stop-using-it-6c4f1caf5117)
+
+- [Inheritance Tax](https://media.pragprog.com/titles/tpp20/inheritance-tax.pdf)

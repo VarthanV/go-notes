@@ -417,4 +417,7 @@ func main() {
 
 ## Empty interface
 
-- B
+- By picturing an interface with no fields and only virtual and abstract methods , We can understand
+what empty inteface{} does.
+
+- Interface{} in golang is a class with no fields and no methods

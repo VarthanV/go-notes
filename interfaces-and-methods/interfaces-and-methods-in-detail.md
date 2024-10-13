@@ -215,3 +215,7 @@ fmt.Println(distanceFromP(q)) // use new value of p
 - Empty interfaces are commonly used
 
 - Reflection needed to determine what the concrete type is
+
+## Additional Reading
+
+[Internals of interfaces](https://research.swtch.com/interfaces)

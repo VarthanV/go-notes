@@ -1,0 +1,34 @@
+root: ./
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+  output: ./docs
+
+plugins:
+  - search
+  - highlight
+
+theme:
+  name: default
+
+# Custom sidebar navigation
+nav:
+  - Introduction: README.md
+  - Arrays and Slices:
+      - arrays-and-slices/*.md
+  - Control Statements:
+      - control-statements/*.md
+  - Functions:
+      - functions/*.md
+  - Interfaces and Methods:
+      - interfaces-and-methods/*.md
+  - Memory:
+      - memory/*.md
+  - Structs:
+      - structs/*.md
+  - Tricks and Gotchas:
+      - tricks-and-gotchas/*.md
+
+# Optional settings
+title: "Go Notes"
+description: "Indepth notes in a simple manner for Golang"

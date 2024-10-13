@@ -1,5 +1,3 @@
-# Control statements, declarations and types
-
 # if then else
  
 - The next type of structure is a choice between alternatives

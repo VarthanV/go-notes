@@ -1,5 +1,3 @@
-# Composition
-
 The fields of embedded struct are promoted to level of embedding
 structure
 

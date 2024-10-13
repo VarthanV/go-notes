@@ -1,4 +1,3 @@
-# Structs
 
 - Struct is aggregate of different types of fields
 

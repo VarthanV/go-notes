@@ -1,5 +1,3 @@
-# Interfaces and methods - In detail
-
 # Nil interface 
 
 - An interface variable is **nil** until initialized

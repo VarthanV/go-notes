@@ -1,5 +1,3 @@
-# Go from OOPS point of view
-
 ## Primer
 
 **Virtual method** : Methods can be overriden/re-implemented by subclass

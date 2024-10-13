@@ -1,5 +1,3 @@
-# Go does OOP
-
 ## OOPS
 
 The essential element of OOPS is

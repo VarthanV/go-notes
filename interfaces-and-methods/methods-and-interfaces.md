@@ -1,5 +1,3 @@
-# Methods and Interfaces
-
 An interface specifies abstract behaviour in terms of **methods**
 
 ```go

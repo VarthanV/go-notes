@@ -1,4 +1,3 @@
-# Reference and Value semantics
 
 |Pointers| Values  |
 |-----------|--------|

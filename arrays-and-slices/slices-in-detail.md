@@ -1,5 +1,3 @@
-# Slices in detail
-
 [Cheatsheet](https://ueokande.github.io/go-slice-tricks/)
 
 

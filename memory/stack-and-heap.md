@@ -1,5 +1,3 @@
-# Stack and Heap and Escape Analysis
-
 - In Go each go routine has its own stack memory and common pool of heap memory
 
 Where var lives in stack or heap ?

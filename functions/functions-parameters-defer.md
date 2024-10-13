@@ -1,5 +1,3 @@
-# Functions
-
 - First class objects
 - Define them - even inside other functions
 - Create anonymous function literals

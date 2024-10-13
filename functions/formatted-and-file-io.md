@@ -1,5 +1,3 @@
-# Formatted and file IO
-
 ## Standard I/O
 
 - Unix has notion of three standard I/O streams

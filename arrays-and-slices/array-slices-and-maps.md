@@ -1,7 +1,4 @@
-# Arrays Slices and Maps
-
-
-- Arrays and Slices sequence of things laid down in memory one after the other
+ Arrays and Slices sequence of things laid down in memory one after the other
 
 
 ## Arrays

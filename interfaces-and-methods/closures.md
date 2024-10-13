@@ -1,5 +1,3 @@
-# Closures
-
 # Scope vs Lifetime
 
 - Scope is static , based on code at compile time

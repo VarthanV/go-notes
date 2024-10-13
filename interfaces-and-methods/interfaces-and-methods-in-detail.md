@@ -18,7 +18,7 @@ r = b  //  r is not nil
 
 - An interface var is nil if only both are
 
-![Internals](./images/interface-internals.png)
+![Internals](../images/interface-internals.png)
 
 # Error is really an interface
 
@@ -104,7 +104,7 @@ p2.Add(3,4) // same as (&p2).Add(3,4)
 
 Compatibility between objects and receiver types
 
-![](./images/pointer-receiver.png)
+![](../images/pointer-receiver.png)
 
  - A method requiring a pointer receiver may only be called on addressable object
 

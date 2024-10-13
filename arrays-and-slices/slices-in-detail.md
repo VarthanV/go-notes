@@ -3,7 +3,7 @@
 [Cheatsheet](https://ueokande.github.io/go-slice-tricks/)
 
 
-![Slices in detail](./images/slice-detail.png)
+![Slices in detail](../images/slice-detail.png)
 
 ## Explanation
 

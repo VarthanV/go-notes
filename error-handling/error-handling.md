@@ -220,3 +220,19 @@ Design your abstractions so that most (or all) ops are safe
 - taking the len of uninitalized string
 
 Try to reduce edge cases that are hard to test debug or even think about
+
+## Proactively prevent problems
+
+- Every pice of data in your software should start life in a valid state
+
+- Every transformation should leave it in a valid state
+    - Break large programs into small pieces you can understand
+    - hide information to reduce the chance of corruption
+    - avoid clever code and side effects
+    - avoid unsafe operations
+    - assert your invariants
+    - never ignore errors
+    - test , test
+    - never accept input from user or environment without validation
+
+    

@@ -152,3 +152,12 @@ Total speed up is limited by the fraction of program that runs sequentially
     - Reduce unecssary allocations
     - Reduce embedded pointers in objects
     - pardoxically, want a larger heap
+
+Go encourages good design, We can choose to
+
+- Allocate contigously
+- to copy or not copy
+- to allocate on stack or heap (sometimes)
+- to be synchornous or asynchornous
+- to avoid unnecessary abstraction layers
+- to avoid short/ forwarding methods

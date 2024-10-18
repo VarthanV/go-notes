@@ -60,5 +60,21 @@ if ! reflect.DeepEqual(got,want){
 
 ## Switch on type
 
-We can also use type assertion in a switch statement
+- We can also use type assertion in a switch statement
 
+```go
+func Println(args ...interface{}){
+    buf := make([]byte,0,80)
+
+    for arg := range args {
+        switch a:= arg . (type){
+            case string:
+                buf = append(buf ,a...) // concrete type
+            case Stringer:
+                buf = append(buf , a.String()...) // interface
+        }
+    }
+}
+```
+
+- Here the switch var has a specific type if the case has a single type

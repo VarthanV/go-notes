@@ -170,4 +170,6 @@ fmt.Println(<-messages)
   - the send will block if buffer is full (occupancy at max)
   - receive(read) when the work is done to free up a space in buffer (this allows the next worker to start)
 
+  ![](../images/table-driven-tests.png)
+
   

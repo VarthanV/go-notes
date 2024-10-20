@@ -63,5 +63,57 @@ func TestCrypto(t*testing.T){
 
  Tests just in a range of values
 
- 
+## Testing culture
+
+We should assume code doesn't work unless
+
+- We have tests (unit,integration etc)
+
+- They work correctly
+
+- You run them , They pass
+
+- The basic code hygeine **start clean , stay clean**
+
+- In general , **developers test to show that things are done and working** ,according to understanding of the problem and solution.
+
+- Most difficulties in SDE development are **failures of imagination**
+
+## Program correctness
+
+- It compiles [and passes static analysis]
+
+- It has no bugs that can be found just running the program
+
+- It works for some handpicked data
+
+- It works for reasonable input
+
+- It works with test data chosen to be difficult
+
+- It works for all input that follows specification
+
+- It works on all input
+
+## Distinct types of erros
+
+- errors in undetstanding the problem requirements.
+
+- errors in understanding the programming language.
+
+- errors in understanding the underlying algorithm
+
+-  errors where we know better but slipped
+
+## Developer testing is necessary
+
+Should aim for ``75-85%`` coverage
+- Unit tests
+
+- Integration tests
+
+- Post deployment sanity checks
+
+
 ![Layers of Testing](../images/layers-of-testing.png)
+

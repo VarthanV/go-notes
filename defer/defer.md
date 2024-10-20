@@ -73,4 +73,8 @@ func main() {
 }
 ```
 
+## Further reading
+
+[Defer fn](https://blog.learngoprogramming.com/golang-defer-simplified-77d3b2b817ff)
+
 

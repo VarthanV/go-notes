@@ -93,3 +93,31 @@ $ go mod init <module-name> ## Create go.mod file
 $ go build ## building the
 
 ```
+- Once a version is set , Go will not update it automatically  , We can update 
+every dep with
+
+```shell
+$ go get  -u ./.. # update transitively
+$ go mod tidy ## remove unnecessary modules
+```
+
+- You must commit ``go.mod`` and ``go.sum`` files in the repo
+
+## Maintaing dependencies
+
+- You can list available version of a dependency
+
+```shell
+go list -m versions rsc.io/sampler
+```
+
+## Vendoring and local cahce
+
+- Use ``go mod vendor`` to create the vendor directory , it must be in 
+the modules root dir (along with ``go.mod``)
+
+- Go keeps a local cache in ``$GOPATH/pkg``
+    - Each package (using a dir tree)
+    - The hash of root checksum DB tree
+
+- Use ``go clean -modcache`` to remove all (make it clean)

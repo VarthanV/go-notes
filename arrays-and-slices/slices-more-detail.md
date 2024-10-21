@@ -88,3 +88,62 @@ b := []string{"George", "Ringo", "Pete"}
 a = append(a, b...) // equivalent to "append(a, b[0], b[1], b[2])"
 // a == []string{"John", "Paul", "George", "Ringo", "Pete"}
 ```
+
+- Slice as a little data structure with two elements: a length and a pointer to an element of an array. You can think of it as being built like this behind the scenes:
+
+```go
+type sliceHeader struct {
+    Length        int
+    ZerothElement *byte
+}
+
+slice := sliceHeader{
+    Length:        50,
+    ZerothElement: &buffer[100],
+}
+```
+
+- It’s important to understand that even though a slice contains a pointer, 
+it is itself a value. Under the covers, it is a struct value holding a pointer and a length. It is not a pointer to a struct.
+
+```go
+func AddOneToEachElement(slice []byte) {
+    for i := range slice {
+        slice[i]++
+    }
+}
+```
+
+```go
+func main() {
+    slice := buffer[10:20]
+    for i := 0; i < len(slice); i++ {
+        slice[i] = byte(i)
+    }
+    fmt.Println("before", slice)
+    AddOneToEachElement(slice)
+    fmt.Println("after", slice)
+}
+```
+
+- Even though the slice header is passed by value, the header includes a pointer to elements of an array, so both the original slice header and the copy of the header passed to the function describe the same array. Therefore, when the function returns, the modified elements can be seen through the original slice variable.
+
+- Here we see that the contents of a slice argument can be modified by a function, but its header cannot. The length stored in the slice variable is not modified by the call to the function, since the function is passed a copy of the slice header, not the original. Thus if we want to write a function that modifies the header, we must return it as a result parameter, just as we have done here. The slice variable is unchanged but the returned value has the new length, which is then stored in newSlice.
+
+## Representation of nil slice
+
+```go
+sliceHeader{
+    Length:        0,
+    Capacity:      0,
+    ZerothElement: nil,
+}
+
+sliceHeader{}
+
+```
+
+- An empty slice can grow (assuming it has non-zero capacity), but a nil slice has no array to put values in and can never grow to hold even one element.
+
+
+

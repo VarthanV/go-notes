@@ -223,3 +223,9 @@ func ReadFour(r io.Reader) ([]byte,error)
 func ReadFour[T io.Reader](r T)([]byte,error)
 
 ```
+
+## When are generics useful
+
+- Avoid boilerplate
+
+- Don't use generics prematurely, Wait until we are about to write boilerplate code.

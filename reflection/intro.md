@@ -176,3 +176,14 @@ x := 10
     - Framework development
 
 
+# Summary 
+---
+
+
+| Task                     | Know How To Do It        |
+| ------------------------ | ------------------------ |
+| Inspect fields and types | `TypeOf`, `ValueOf`      |
+| Read struct tags         | `StructField.Tag.Get()`  |
+| Modify fields at runtime | `FieldByName().Set()`    |
+| Convert values safely    | `.Convert()`             |
+| Work with pointers       | `.Elem()` and `CanSet()` |
